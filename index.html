@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK PIXER TOON AI</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101323;
+  color: white;
+}
+
+header {
+  background: linear-gradient(135deg, #6c35dc, #e13b9a);
+  padding: 24px 15px;
+  text-align: center;
+  border-radius: 0 0 25px 25px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+header p {
+  margin-bottom: 0;
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+  padding: 18px;
+}
+
+.card {
+  background: #1c2035;
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+
+h2 {
+  color: #e7b8ff;
+  font-size: 19px;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid #555b78;
+  background: #101323;
+  color: white;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  padding: 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #793cf0, #df379b);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.result {
+  background: #101323;
+  padding: 14px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+  min-height: 55px;
+}
+
+footer {
+  text-align: center;
+  color: #b7b9cc;
+  padding: 20px;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎬 SK PIXER TOON AI</h1>
+  <p>Ƙirƙiri labarinka. Ka tsara duniyarka!</p>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>🤖 AI Chatbot</h2>
+    <p>Rubuta tambayarka domin samun taimako.</p>
+
+    <textarea id="question"
+      placeholder="Rubuta tambayarka a nan..."></textarea>
+
+    <button onclick="answerQuestion()">
+      Amsa Tambaya
+    </button>
+
+    <div class="result" id="answer">
+      Amsarka za ta bayyana a nan.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🎥 Mai Tsara Cartoon</h2>
+
+    <textarea id="story"
+      placeholder="Rubuta sunan labarinka ko bayaninsa..."></textarea>
+
+    <select id="style">
+      <option value="3D Pixar-style cartoon">3D Cartoon</option>
+      <option value="Royal palace animation">Royal Palace</option>
+      <option value="Funny animated story">Barkwanci</option>
+      <option value="Romantic animated story">Soyayya</option>
+    </select>
+
+    <button onclick="makeStory()">
+      Shirya Labari da Scenes
+    </button>
+
+    <div class="result" id="storyResult">
+      Tsarin labarinka zai bayyana a nan.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  SK PIXER TOON AI © 2026<br>
+  Your imagination, your world.
+</footer>
+
+<script>
+function answerQuestion() {
+  const q = document.getElementById("question").value.trim();
+  const box = document.getElementById("answer");
+
+  if (!q) {
+    box.textContent = "Da fatan za ka fara rubuta tambayarka.";
+    return;
+  }
+
+  box.textContent =
+    "Na karɓi tambayarka: " + q +
+    "\n\nWannan sigar farko ce ta SK PIXER TOON AI. " +
+    "Domin samun amsoshi masu zurfi daga AI, za mu haɗa ta da AI API a mataki na gaba.";
+}
+
+function makeStory() {
+  const story = document.getElementById("story").value.trim();
+  const style = document.getElementById("style").value;
+  const box = document.getElementById("storyResult");
+
+  if (!story) {
+    box.textContent = "Da fatan ka rubuta sunan ko bayanin labarinka.";
+    return;
+  }
+
+  box.textContent =
+    "SK PIXER TOON AI — STORYBOARD\n\n" +
+    "Labarin: " + story +
+    "\nSalo: " + style +
+    "\n\nSCENE 1 — Gabatarwa\n" +
+    "Ka nuna wurin da labarin zai fara da babban jarumi.\n\n" +
+    "SCENE 2 — Fara Al'amari\n" +
+    "Ka nuna abin da ya fara faruwa da yadda jarumi ya ji.\n\n" +
+    "SCENE 3 — Matsala\n" +
+    "Ka gabatar da matsala ko ƙalubalen labarin.\n\n" +
+    "SCENE 4 — Ci Gaba\n" +
+    "Ka nuna yadda jaruman suke ƙoƙarin magance matsalar.\n\n" +
+    "SCENE 5 — Ƙarshe\n" +
+    "Ka nuna sakamakon labarin da yadda ya ƙare.\n\n" +
+    "Prompt na hoto:\n" +
+    style + ", " + story +
+    ", cinematic lighting, detailed characters, high quality animation.";
+}
+</script>
+
+</body>
+</html>
